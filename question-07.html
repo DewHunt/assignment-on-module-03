@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Assignment On Module 03: Q-07</title>
+    <style>
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a class="button" href="./index.html">Back To Home</a>
+    </div>
+    <img
+    src=https://img.freepik.com/free-photo/purple-osteospermum-daisy-flower_1373-16.jpg?w=2000
+    width="350" height="250" onmouseover="changeImageSrc()"/>
+    <script>
+      // Question - 7 (a)
+      document.addEventListener("click", function (event) {
+        alert(`Coordinates:\nX = ${event.clientX}\nY = ${event.clientY}`);
+      });
+      // Question - 7 (b)
+      document.addEventListener("keypress", function (event) {
+        alert(`Key Name: = ${event.key}\nKey Code = ${event.which}`);
+      });
+      // Question - 7 (c)
+      function changeImageSrc() {
+        let imgElement = document.querySelector("img");
+        imgElement.src =
+          "https://cdn2.stylecraze.com/wp-content/uploads/2013/07/25-Most-Beautiful-Blue-Flowers.jpg";
+      }
+    </script>
+  </body>
+</html>

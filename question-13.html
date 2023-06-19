@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Assignment On Module 03: Q-13</title>
+    <style>
+      .p-div {
+        display: flex;
+      }
+      .btn-div {
+        margin: 5px;
+      }
+      p {
+        border: 2px solid black;
+        width: 350px;
+        height: 250px;
+        background-color: gainsboro;
+        color: black;
+        margin: 5px;
+        padding: 10px;
+        text-align: justify;
+        font-size: 18px;
+      }
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a class="button" href="./index.html">Back To Home</a>
+    </div>
+    <div class="btn-div">
+      <button onclick="changeParagraphTextColor()">Change The Content</button>
+    </div>
+    <div class="p-div">
+      <p class="para-01">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, ipsum
+        corrupti alias quis praesentium hic nobis assumenda velit dolores
+        laboriosam amet quaerat iste pariatur, magnam dignissimos dolor ut esse.
+        Esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+        soluta qui enim facilis tempora deleniti totam illum atque, repellendus
+        neque voluptates quam repudiandae temporibus ea nisi ab laboriosam
+        quidem nihil?
+      </p>
+      <p class="para-02">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, ipsum
+        corrupti alias quis praesentium hic nobis assumenda velit dolores
+        laboriosam amet quaerat iste pariatur, magnam dignissimos dolor ut esse.
+        Esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+        soluta qui enim facilis tempora deleniti totam illum atque, repellendus
+        neque voluptates quam repudiandae temporibus ea nisi ab laboriosam
+        quidem nihil?
+      </p>
+      <p class="para-03">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, ipsum
+        corrupti alias quis praesentium hic nobis assumenda velit dolores
+        laboriosam amet quaerat iste pariatur, magnam dignissimos dolor ut esse.
+        Esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+        soluta qui enim facilis tempora deleniti totam illum atque, repellendus
+        neque voluptates quam repudiandae temporibus ea nisi ab laboriosam
+        quidem nihil?
+      </p>
+      <p class="para-04">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, ipsum
+        corrupti alias quis praesentium hic nobis assumenda velit dolores
+        laboriosam amet quaerat iste pariatur, magnam dignissimos dolor ut esse.
+        Esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+        soluta qui enim facilis tempora deleniti totam illum atque, repellendus
+        neque voluptates quam repudiandae temporibus ea nisi ab laboriosam
+        quidem nihil?
+      </p>
+    </div>
+    <script>
+      function changeParagraphTextColor() {
+        let grandParent = document.querySelector(".p-div");
+        let parent = grandParent.children;
+        for (const element of parent) {
+          console.log("element", element);
+          element.style.color = "red";
+        }
+      }
+    </script>
+  </body>
+</html>

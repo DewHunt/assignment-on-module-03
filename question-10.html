@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Assignment On Module 03: Q-10</title>
+    <style>
+      .p-div {
+        border: 2px solid black;
+        width: 350px;
+        height: 350px;
+        background-color: gray;
+        color: white;
+        padding: 10px;
+        text-align: justify;
+      }
+      .highlight {
+        background-color: yellow;
+        color: black;
+      }
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a class="button" href="./index.html">Back To Home</a>
+    </div>
+    <button onclick="changeCss()">Change The Content</button>
+    <p class="p-div">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, ipsum
+      corrupti alias quis praesentium hic nobis assumenda velit dolores
+      laboriosam amet quaerat iste pariatur, magnam dignissimos dolor ut esse.
+      Esse. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+      soluta qui enim facilis tempora deleniti totam illum atque, repellendus
+      neque voluptates quam repudiandae temporibus ea nisi ab laboriosam quidem
+      nihil?
+    </p>
+    <script>
+      function changeCss() {
+        let pElement = document.querySelector("p");
+        pElement.classList.add("highlight");
+        ("Cows are one of the most innocent animals who are very harmless");
+      }
+    </script>
+  </body>
+</html>

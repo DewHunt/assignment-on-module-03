@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Assignment On Module 03: Q-09</title>
+    <style>
+      .error-msg {
+        color: red;
+      }
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a class="button" href="./index.html">Back To Home</a>
+    </div>
+    <form name="myForm" onsubmit="return validate(event)" method="post">
+      <label for="name">Name: </label>
+      <input type="text" name="name" id="name" placeholder="Enter Name" />
+      <br />
+      <span class="error-msg" id="nameMsg"></span>
+      <br /><br />
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email" placeholder="Enter Email" />
+      <br />
+      <span class="error-msg" id="emailMsg"></span>
+      <br /><br />
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter Password"
+      />
+      <br />
+      <span class="error-msg" id="passwordMsg"></span>
+      <br /><br />
+      <label for="confirm-password">Confirm Password:</label>
+      <input
+        type="password"
+        name="confirmPassword"
+        id="confirmPassword"
+        placeholder="Enter Password Again"
+      />
+      <br />
+      <span class="error-msg" id="confirmpPsswordMsg"></span>
+      <br /><br />
+      <button id="submit">Submit</button>
+    </form>
+    <script>
+      function validate(event) {
+        event.preventDefault();
+        let isValid = true;
+        let lowerCaseLetters = /^(?=.*[a-z])/;
+        let upperCaseLetters = /^(?=.*[A-Z])/;
+        let numbers = /^(?=.*[0-9])/;
+        let emailReg =
+          /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let name = document.myForm.name.value;
+        let email = document.myForm.email.value;
+        let password = document.myForm.password.value;
+        let confirmPassword = document.myForm.confirmPassword.value;
+        let emailErrorText = "";
+        let passwordErrorText = "";
+        let confirmPasswordErrorText = "";
+        if (name == "") {
+          console.log(document.getElementById("nameMsg"));
+          document.getElementById("nameMsg").innerHTML =
+            "Please provide your name!";
+          document.myForm.name.focus();
+          isValid = false;
+        }
+        if (email == "") {
+          emailErrorText = "Please provide your email!";
+          document.myForm.email.focus();
+          isValid = false;
+        }
+        document.myForm.email.focus();
+        if (email.search(emailReg)) {
+          emailErrorText = "Please enter valid email!";
+          document.myForm.email.focus();
+          isValid = false;
+        }
+        if (password == "") {
+          passwordErrorText += "Fill the password please!";
+          document.myForm.password.focus();
+          isValid = false;
+        }
+        if (password.length < 8) {
+          passwordErrorText +=
+            "<br>Password length must be atleast 8 characters";
+          document.myForm.password.focus();
+          isValid = false;
+        }
+        if (password.search(lowerCaseLetters)) {
+          passwordErrorText +=
+            "<br>Password must contain atleast one lowercase";
+          document.myForm.password.focus();
+          isValid = false;
+        }
+        if (password.search(upperCaseLetters)) {
+          passwordErrorText +=
+            "<br>Password must contain atleast one uppercase";
+          document.myForm.password.focus();
+          isValid = false;
+        }
+        if (password.search(numbers)) {
+          passwordErrorText += "<br>Password must contain atleast one number";
+          document.myForm.password.focus();
+          isValid = false;
+        }
+        if (password != confirmPassword) {
+          confirmPasswordErrorText =
+            "Confirm Password must be match with password field";
+          document.myForm.confirmPassword.focus();
+          isValid = false;
+        }
+        document.getElementById("emailMsg").innerHTML = emailErrorText;
+        document.getElementById("passwordMsg").innerHTML = passwordErrorText;
+        document.getElementById("confirmpPsswordMsg").innerHTML =
+          confirmPasswordErrorText;
+        return isValid;
+      }
+    </script>
+  </body>
+</html>

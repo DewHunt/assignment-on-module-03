@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Assignment Of Module 03: Q-06</title>
+    <style>
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a class="button" href="./index.html">Back To Home</a>
+    </div>
+    <script>
+      getCurrentLocation();
+      function getCurrentLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showCurrentPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+      function showCurrentPosition(currentPosition) {
+        const latitude = currentPosition.coords.latitude;
+        const longitude = currentPosition.coords.longitude;
+        document.write(
+          `<b>Latitude:</b> ${latitude}<br><b>Longitude:</b> ${longitude}`
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Assignment On Module 03: Q-14</title>
+    <style>
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a class="button" href="./index.html">Back To Home</a>
+    </div>
+    <script src="./js/axios.min.js"></script>
+    <script>
+      ajaxGetRequest();
+      async function ajaxGetRequest() {
+        let response = await axios.get("https://api.example.com/data");
+        console.log("response", response);
+      }
+    </script>
+  </body>
+</html>

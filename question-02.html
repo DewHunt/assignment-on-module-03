@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Assignment Of Module 03: Q-02</title>
+    <style>
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a class="button" href="./index.html">Back To Home</a>
+    </div>
+    <script>
+      document.write(
+        `<b>Square Root of the Sum of Squares: </b>${calculateSRSS([2, 3, 4])}`
+      );
+      function calculateSRSS(numbers) {
+        // SRSS = SQUARE ROOT of the SUM of SQUARES
+        let squareRoot;
+        let sum = 0;
+        for (const num of numbers) {
+          sum += Math.pow(num, 2);
+          squareRoot = Math.sqrt(sum);
+        }
+        return squareRoot;
+      }
+    </script>
+  </body>
+</html>
